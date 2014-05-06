@@ -57,21 +57,7 @@
                  "width":0,
                  "x":740,
                  "y":260
-                }, 
-                {
-                 "gid":7,
-                 "height":0,
-                 "name":"",
-                 "properties":
-                    {
-                     "text":"use the up arrow key to jump"
-                    },
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":1180,
-                 "y":40
-                }, 
+                },  
                 {
                  "gid":2,
                  "height":0,
@@ -148,7 +134,7 @@
                  "name":"",
                  "properties":
                     {
-                     "text":"right, left, right... this looks boring"
+                     "text":"let's have some fun!"
                     },
                  "type":"",
                  "visible":true,
@@ -169,20 +155,6 @@
                  "width":0,
                  "x":1600,
                  "y":300
-                }, 
-                {
-                 "gid":7,
-                 "height":0,
-                 "name":"",
-                 "properties":
-                    {
-                     "text":"but you probably already know that"
-                    },
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":1180,
-                 "y":80
                 }, 
                 {
                  "gid":2,

@@ -106,7 +106,7 @@
                  "name":"",
                  "properties":
                     {
-                     "text":"coins are awesome, take them"
+                     "text":"collect coins for fun and profit!"
                     },
                  "type":"",
                  "visible":true,
@@ -120,27 +120,13 @@
                  "name":"",
                  "properties":
                     {
-                     "text":"red things = bad things"
+                     "text":"don't touch the red things!"
                     },
                  "type":"",
                  "visible":true,
                  "width":0,
                  "x":1320,
                  "y":80
-                }, 
-                {
-                 "gid":7,
-                 "height":0,
-                 "name":"",
-                 "properties":
-                    {
-                     "text":"collect all coins to finish the level"
-                    },
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":1740,
-                 "y":360
                 }],
          "opacity":1,
          "type":"objectgroup",

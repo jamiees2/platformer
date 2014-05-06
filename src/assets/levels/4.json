@@ -232,7 +232,7 @@
                  "name":"",
                  "properties":
                     {
-                     "text":"it's funny to see you die"
+                     "text":"i like watching you die"
                     },
                  "type":"",
                  "visible":true,
@@ -316,28 +316,14 @@
                  "name":"",
                  "properties":
                     {
-                     "text":"there are so many red things"
+                     "text":"relax, and die"
                     },
                  "type":"",
                  "visible":true,
                  "width":0,
                  "x":1580,
                  "y":300
-                }, 
-                {
-                 "gid":7,
-                 "height":0,
-                 "name":"",
-                 "properties":
-                    {
-                     "text":"stop reading this, or you will die"
-                    },
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":1580,
-                 "y":340
-                }, 
+                },
                 {
                  "gid":2,
                  "height":0,
