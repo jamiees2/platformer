@@ -15,20 +15,16 @@ Game.Load:: =
     preloading2.x -= preloading2.width / 2
     preloading = game.add.sprite(w / 2, h / 2 + 19, "loading")
     preloading.x -= preloading.width / 2
-    game.load.setPreloadSprite preloading
-    game.load.spritesheet "player", "assets/images/player3.png", 24, 30
-    game.load.image "logo", "assets/images/logo3.png"
-    game.load.image "success", "assets/images/success3.png"
-    game.load.image "coin", "assets/images/coin.png"
-    game.load.image "enemy", "assets/images/enemy.png"
-    
-    # game.load.spritesheet('sound', 'assets/images/sound4.png', 28, 22);
+    @load.setPreloadSprite preloading
+    @load.spritesheet "player", "assets/images/player3.png", 24, 30
+    @load.image "logo", "assets/images/logo3.png"
+    @load.image "success", "assets/images/success3.png"
+    @load.image "coin", "assets/images/coin.png"
+    @load.image "enemy", "assets/images/enemy.png"
     
     @load.audio('coin', 'assets/sounds/coin.wav')
-    # game.load.audio('dead', 'sounds/dead.wav');
-    # game.load.audio('yeah', 'sounds/yeah.mp3');
-    # game.load.audio('jump', 'sounds/jump.wav');
-    # game.load.audio('music', 'sounds/music.wav');
+    @load.audio('dead', 'assets/sounds/dead.wav')
+    @load.audio('jump', 'assets/sounds/jump.wav')
     @game.load.tilemap "map1", "assets/levels/1.json", null, Phaser.Tilemap.TILED_JSON
     @game.load.tilemap "map2", "assets/levels/2.json", null, Phaser.Tilemap.TILED_JSON
     @game.load.tilemap "map3", "assets/levels/3.json", null, Phaser.Tilemap.TILED_JSON

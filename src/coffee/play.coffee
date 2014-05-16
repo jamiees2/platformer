@@ -19,15 +19,10 @@ Game.Play:: =
     
     @coin_s = @add.sound('coin')
     @coin_s.volume = 0.2
-    # this.dead_s = game.add.sound('dead');
-    # this.dead_s.volume = 0.3;
-    # this.yeah_s = game.add.sound('yeah');
-    # this.yeah_s.volume = 0.3;
-    # this.jump_s = game.add.sound('jump');
-    # this.jump_s.volume = 0.2;
-    
-    # this.music = game.add.sound('music'); 
-    # if (sound) this.music.play('', 0, 0.2, true);
+    @dead_s = @add.sound('dead')
+    @dead_s.volume = 0.3
+    @jump_s = @add.sound('jump')
+    @jump_s.volume = 0.2
     @next_level()
     return
 
@@ -81,7 +76,7 @@ Game.Play:: =
   player_dead: (sprite, tile) ->
     dead += 1
     
-    # if (sound) this.dead_s.play();
+    this.dead_s.play() if sound
     if @level is 6
       @player.reset w / 2 - 50, h / 2 - 100
     else
@@ -110,8 +105,6 @@ Game.Play:: =
     if @level is 1
       @load_map()
     else
-      
-      # if (sound) this.yeah_s.play();
       t = game.add.tween(@player).to(
         angle: 360
       , 600).start()
@@ -221,7 +214,7 @@ Game.Play:: =
     if @cursor.up.isDown and @player.body.blocked.down
       @player.body.velocity.y = -200
       
-      # if (sound) this.jump_s.play();
+      @jump_s.play() if sound
       @playerJumpCount = 1
     else if @cursor.up.isDown and @playerJumpCount < 12 and @playerJumpCount isnt 0
       @playerJumpCount += 1

@@ -97,6 +97,6 @@ gulp.task('clean',function(){
   rmdir('dist', function(){});
 });
 
-gulp.task('default', ['connect', 'watch']);
+gulp.task('default', ['coffee', 'connect', 'watch']);
 gulp.task('build', ['clean', 'copy','lib', 'uglify', 'minifycss', 'processhtml', 'minifyhtml']);
 
