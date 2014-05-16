@@ -1,8 +1,3 @@
-#
-#  Programming and art made by www.lessmilk.com
-#  You can freely look at the code below, 
-#  but you are not allowed to use the code or art to make your own games
-#
 Game.Play = (game) ->
 
 Game.Play:: =
@@ -15,7 +10,7 @@ Game.Play:: =
     @camera.follow @player, Phaser.Camera.FOLLOW_PLATFORMER
     @player.anchor.setTo 0.5, 0.5
     @coins_taken = 0
-    @level = 5
+    @level = 1
     @dead = 0
     @playerJumpCount = 0
     @coins = game.add.group()
@@ -125,7 +120,7 @@ Game.Play:: =
       @player.body.velocity.y = 0
       if @level is 6
         t.onComplete.add (->
-          @game.state.start "Endd"
+          @game.state.start "Over"
           return
         ), this
       else
@@ -179,7 +174,7 @@ Game.Play:: =
     @labels.forEachAlive ((l) ->
       l.label = game.add.text(l.x, l.y, l.text,
         font: "22px Arial"
-        fill: "#fff"
+        fill: "#111"
       )
       l.label.anchor.setTo 0.5, 1
       l.label.x += 10

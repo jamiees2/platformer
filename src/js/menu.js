@@ -11,7 +11,7 @@ Game.Menu.prototype = {
     }, 1000, Phaser.Easing.Bounce.Out).start();
     label = game.add.text(w / 2, h - 50, "press the UP arrow key to start", {
       font: "25px Arial",
-      fill: "#fff"
+      fill: "#111"
     });
     label.anchor.setTo(0.5, 0.5);
     label.alpha = 0;
@@ -25,6 +25,8 @@ Game.Menu.prototype = {
     }, 500).loop().start();
   },
   update: function() {
-    this.game.state.start("Play");
+    if (this.cursor.up.isDown) {
+      this.game.state.start("Play");
+    }
   }
 };

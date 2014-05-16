@@ -10,7 +10,7 @@ Game.Boot = function(game) {};
 
 Game.Boot.prototype = {
   preload: function() {
-    game.stage.backgroundColor = "#FFDE00";
+    game.stage.backgroundColor = "#F0F0F0";
     game.load.image("loading", "assets/images/loading.png");
     game.load.image("loading2", "assets/images/loading2.png");
   },

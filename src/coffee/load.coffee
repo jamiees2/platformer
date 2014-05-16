@@ -8,7 +8,7 @@ Game.Load:: =
   preload: ->
     label2 = game.add.text(Math.floor(w / 2) + 0.5, Math.floor(h / 2) - 15 + 0.5, "loading...",
       font: "30px Arial"
-      fill: "#fff"
+      fill: "#111"
     )
     label2.anchor.setTo 0.5, 0.5
     preloading2 = game.add.sprite(w / 2, h / 2 + 15, "loading2")
@@ -17,8 +17,8 @@ Game.Load:: =
     preloading.x -= preloading.width / 2
     game.load.setPreloadSprite preloading
     game.load.spritesheet "player", "assets/images/player3.png", 24, 30
-    game.load.image "logo", "assets/images/logo2.png"
-    game.load.image "success", "assets/images/success2.png"
+    game.load.image "logo", "assets/images/logo3.png"
+    game.load.image "success", "assets/images/success3.png"
     game.load.image "coin", "assets/images/coin.png"
     game.load.image "enemy", "assets/images/enemy.png"
     

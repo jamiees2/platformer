@@ -8,7 +8,7 @@ Game.Play.prototype = {
     this.camera.follow(this.player, Phaser.Camera.FOLLOW_PLATFORMER);
     this.player.anchor.setTo(0.5, 0.5);
     this.coins_taken = 0;
-    this.level = 5;
+    this.level = 1;
     this.dead = 0;
     this.playerJumpCount = 0;
     this.coins = game.add.group();
@@ -106,7 +106,7 @@ Game.Play.prototype = {
       this.player.body.velocity.y = 0;
       if (this.level === 6) {
         t.onComplete.add((function() {
-          this.game.state.start("Endd");
+          this.game.state.start("Over");
         }), this);
       } else {
         t.onComplete.add(this.load_map, this);
@@ -161,7 +161,7 @@ Game.Play.prototype = {
     this.labels.forEachAlive((function(l) {
       l.label = game.add.text(l.x, l.y, l.text, {
         font: "22px Arial",
-        fill: "#fff"
+        fill: "#111"
       });
       l.label.anchor.setTo(0.5, 1);
       l.label.x += 10;

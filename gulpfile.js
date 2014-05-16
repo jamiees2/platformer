@@ -9,12 +9,15 @@ var gulp = require('gulp')
   , uglify = require('gulp-uglify')
   , connect = require('gulp-connect')
   , coffee = require('gulp-coffee')
+  , rmdir = require('rimraf')
+  , order = require('gulp-order')
   , paths;
 
 paths = {
   assets: 'src/assets/**/*',
   css:    __dirname + '/src/css/*.css', 
   js:     [__dirname + '/src/js/**/*.js', "!" + __dirname + '/src/js/lib/*.js'],
+  lib: __dirname + '/src/lib/**/*.js',
   coffee: __dirname + '/src/coffee/**/*.coffee',
   dist:   './dist/'
 };
@@ -23,12 +26,18 @@ gulp.task('copy', function () {
   gulp.src(paths.assets).pipe(gulp.dest(paths.dist + 'assets'));
 });
 
-gulp.task('uglify', ['jshint'], function () {
-  gulp.src(paths.js)
+gulp.task('lib', function(){
+	gulp.src(paths.lib)
+		.pipe(concat('vendor.min.js'))
+		.pipe(gulp.dest(paths.dist));
+});
+gulp.task('uglify', function () {
+  gulp.src([__dirname + "/src/js/**/!(game)*.js",
+	    __dirname + "/src/js/game.js"])
     .pipe(concat('main.min.js'))
     .pipe(gulp.dest(paths.dist))
-    .pipe(uglify({outSourceMaps: false}))
-    .pipe(gulp.dest(paths.dist));
+    // .pipe(uglify({outSourceMaps: false}))
+    // .pipe(gulp.dest(paths.dist));
 });
 
 gulp.task('minifycss', function () {
@@ -84,6 +93,10 @@ gulp.task('watch', function () {
   gulp.watch(['./src/index.html', paths.css, paths.js], ['html']);
 });
 
+gulp.task('clean',function(){
+  rmdir('dist', function(){});
+});
+
 gulp.task('default', ['connect', 'watch']);
-gulp.task('build', ['copy', 'uglify', 'minifycss', 'processhtml', 'minifyhtml']);
+gulp.task('build', ['clean', 'copy','lib', 'uglify', 'minifycss', 'processhtml', 'minifyhtml']);
 
