@@ -1,4 +1,5 @@
 Game.Play = (game) ->
+  dead = 0
 
 Game.Play:: =
   create: ->
